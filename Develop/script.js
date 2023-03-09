@@ -4,13 +4,13 @@ function generatePassword(){
   var lengthAsString = window.prompt("Type a number");
   var length = parseInt(lengthAsString);
   var special = window.confirm("want special charachters");
-  var Num = window.confirm("want numbers");
+  var num = window.confirm("want numbers");
   var upper = window.confirm("want upper case");
   var low = window.confirm("want lower case");
 
 
   var lowerChars = "abcdefghijklmnopqrstuvwxyz";
-  var specialChars = "!@#$%^&*()";
+  var specialChars = "!@#$%^&*()_+";
   var numChars = "1234567890";
   var upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   
@@ -20,13 +20,13 @@ function generatePassword(){
 
   for (let i=0; i<length; i++){
     if (special && i % 4 === 0){
-      password += specialChars.charAt(math.floor(math.random()* specialChars.length));
-    } else if (Num && i % 4 === 1){
-      password += numChars.charAt(math.floor(math.random()* numChars.length));
+      password += specialChars.charAt(Math.floor(Math.random()* specialChars.length));
+    } else if (num && i % 4 === 1){
+      password += numChars.charAt(Math.floor(Math.random()* numChars.length));
     } else if (upper && i % 4=== 2){
-      password += upperChars.charAt(math.floor(math.random()* upperChars.length));
+      password += upperChars.charAt(Math.floor(Math.random()* upperChars.length));
     } else if (low && i % 4 === 3){
-      password += lowerChars.charAt(math.floor(math.random()* lowerChars.length));
+      password += lowerChars.charAt(Math.floor(Math.random()* lowerChars.length));
     } else {
       i--;
     }
